@@ -4,5 +4,6 @@ game_over.onclick=()=>{
     window.open("./index.html", "_self")
 }
 let score_box = document.getElementById("score-board");
+// RETREIVING THE DATA FROM THE LOCAL STORAGE
 let value= localStorage.getItem("score");
 score_box.textContent=value;

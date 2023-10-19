@@ -6,6 +6,7 @@ let num1_box= document.getElementById("number1");
 let num2_box= document.getElementById("number2");
 
 function generateRandomNumber(){
+    // FUNCTION TO GENERATE RANDOM NUMBERS
     num1=Math.floor(Math.random()*100);
     num2=Math.floor(Math.random()*100);
     num1_box.textContent=num1;
@@ -25,6 +26,7 @@ greater_than.onclick=()=>{
         score++;
        generateRandomNumber();
         console.log(score);
+        // STORING THE SCORE IN THE LOCAL STORAGE
         localStorage.setItem("score", score);
         clearInterval(interval);
         startInterval();
@@ -47,7 +49,6 @@ equal_to.onclick=()=>{
     }
 
 }
-
 lesser_than.onclick=()=>{
     if(num1<num2){
         score++;
@@ -71,9 +72,12 @@ function startInterval(){
      time--;
      if(time==0){
          location.href="./gameover.html"
+        //  TO SET THE TIME TO ZERO WHEN THE PAGE REFRESHES
          clearInterval(interval);
         }
 },1000)
+// 1000=1s of time gapg
 }
 startInterval()
+// TO SET THE STORED DATA AT LOCAL STORAGE TO DEFAULT=0
 localStorage.setItem("score", score)
